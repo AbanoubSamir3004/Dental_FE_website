@@ -9,9 +9,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>document.documentElement.classList.add("js","is-loading");</script>
 </head>
 <body>
+  <div id="pageLoader" class="page-loader" role="status" aria-live="polite" aria-label="Loading DigiQex">
+    <div class="loader-grid"></div>
+    <div class="loader-vignette"></div>
+    <div class="loader-core">
+      <div class="loader-mark-stage">
+        <span class="loader-orbit"></span>
+        <span class="loader-orbit loader-orbit--2"></span>
+        <div class="loader-mark-wrap">
+          <span class="loader-laser"></span>
+          <img class="loader-mark brand-mark" src="images/logo-mark.png" alt="">
+        </div>
+      </div>
+      <div class="logo-type loader-word" aria-hidden="true">
+        <span class="lw" style="--i:0">D</span>
+        <span class="lw" style="--i:1">i</span>
+        <span class="lw" style="--i:2">g</span>
+        <span class="lw i" style="--i:3">i</span>
+        <span class="lw q" style="--i:4">Q</span>
+        <span class="lw" style="--i:5">e</span>
+        <span class="lw" style="--i:6">x</span>
+      </div>
+      <p class="brand-sub loader-kicker">ORTHODONTIC DIGITAL LAB</p>
+      <div class="loader-track"><span class="loader-fill"></span></div>
+    </div>
+  </div>
+
   <header class="wrap topbar">
     <a class="brand" href="#home">
       <img class="brand-mark" src="images/logo-mark.png" alt="DigiQex">
@@ -108,48 +134,78 @@
 
     <section id="process" class="section process bg-grid">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head process-head">
           <div class="kicker">Process</div>
           <h2>MY STRATEGIC DESIGN PROCESS</h2>
         </div>
-        <div class="process-flow reveal">
-          <article class="step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="10" y="8" width="18" height="28" rx="3"/>
-                <path d="M28 16h8l4 6v14h-12"/>
-                <circle cx="19" cy="22" r="4"/>
-                <path d="M14 32h10"/>
+        <div class="process-board reveal">
+          <svg class="process-snake" aria-hidden="true">
+            <path class="snake-line" fill="none"/>
+            <circle class="snake-dot" r="3.5"/>
+          </svg>
+
+          <article class="pstep pstep--1">
+            <div class="step-icon" data-node="start">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="16" y="3.8" width="16" height="14.5" rx="4"/>
+                <rect x="19.2" y="7" width="9.6" height="7.4" rx="1.6"/>
+                <path d="M20.8 18.3h6.4v3.4c0 1-.5 1.9-1.4 2.4L24 25.4"/>
+                <path d="M18.6 25.8h10.8L33.2 43.6A2.6 2.6 0 0 1 30.7 46.5H17.3A2.6 2.6 0 0 1 14.8 43.6L18.6 25.8z"/>
+                <path d="M21.4 32.8h5.2M22.2 38.4h3.6"/>
               </svg>
             </div>
-            <h3>1. 3D SCAN &amp; DISCOVERY</h3>
-            <p>Intraoral scans reviewed for anatomy, occlusion, and treatment goals before any setup begins.</p>
+            <div class="pstep-copy">
+              <h3>1. 3D SCAN &amp; DISCOVERY</h3>
+              <p>Intraoral scans reviewed for anatomy, occlusion, and treatment goals.</p>
+            </div>
           </article>
-          <div class="flow-line" aria-hidden="true"></div>
-          <article class="step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M8 30c4-10 10-16 16-16s12 6 16 16"/>
-                <path d="M16 30h16"/>
-                <circle cx="24" cy="18" r="3"/>
-                <path d="M20 14l-3-5M28 14l3-5"/>
+
+          <article class="pstep pstep--2">
+            <div class="step-icon step-icon--arch">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 26c0-11.4 6.6-19.5 15-19.5S39 14.6 39 26"/>
+                <path d="M13.8 26c.3-7.6 4.7-13 10.2-13s9.9 5.4 10.2 13"/>
+                <path d="M11.2 20.2V15.4c0-1.4 1.1-2.5 2.5-2.5h.4"/>
+                <path d="M15.6 12.2c.3-2.2 2-3.8 4.1-3.8h.6"/>
+                <path d="M21.4 8.2c.4-1.8 2-3 3.6-3s3.2 1.2 3.6 3"/>
+                <path d="M27.7 8.4h.6c2.1 0 3.8 1.6 4.1 3.8"/>
+                <path d="M33.9 12.9h.4c1.4 0 2.5 1.1 2.5 2.5v4.8"/>
+                <path d="M9 26c0 9.8 5.8 16.8 15 16.8S39 35.8 39 26"/>
+                <path d="M14.6 31.2c2.4 5.2 5.8 8 9.4 8s7-2.8 9.4-8"/>
               </svg>
             </div>
-            <h3>2. DIGITAL PLANNING</h3>
-            <p>Tooth-by-tooth staging, attachments, and IPR mapped for predictable, aesthetic outcomes.</p>
+            <div class="pstep-copy">
+              <h3>2. DIGITAL PLANNING</h3>
+              <p>Tooth-by-tooth staging, attachments, and IPR mapped with precision.</p>
+            </div>
+            <div class="step-icon step-icon--base" data-node="mid">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 21.5c.4-6.8 4.3-11.2 9.5-11.2s9.1 4.4 9.5 11.2"/>
+                <path d="M18 21.5c.3-4.4 2.7-7.2 6-7.2s5.7 2.8 6 7.2"/>
+                <path d="M11.5 24.2h25v4.2h-25z"/>
+                <path d="M9.5 28.4h29l-2.4 11.2H11.9z"/>
+              </svg>
+            </div>
           </article>
-          <div class="flow-line" aria-hidden="true"></div>
-          <article class="step">
-            <div class="step-icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="14" y="6" width="20" height="10" rx="2"/>
-                <path d="M18 16v6h12v-6"/>
-                <path d="M12 28h24v10H12z"/>
-                <path d="M16 38v4h16v-4"/>
+
+          <article class="pstep pstep--3">
+            <div class="step-icon" data-node="end">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8.8" y="4.8" width="30.4" height="38.4" rx="2.4"/>
+                <path d="M8.8 12.6h30.4"/>
+                <circle cx="13.6" cy="8.7" r="1.15" fill="currentColor" stroke="none"/>
+                <circle cx="17.6" cy="8.7" r="1.15" fill="currentColor" stroke="none"/>
+                <path d="M14.8 12.6v9.2h18.4v-9.2"/>
+                <path d="M24 21.8v5.6"/>
+                <path d="M20.2 27.4h7.6l1.3 3.4H18.9l1.3-3.4z"/>
+                <rect x="14.8" y="34.2" width="18.4" height="4.6" rx=".5"/>
+                <path d="M18.8 34.2v-3.6h10.4v3.6"/>
               </svg>
             </div>
-            <h3>3. FABRICATION &amp; QC</h3>
-            <p>Print, trim, polish, and inspect every appliance against the approved digital plan.</p>
+            <div class="pstep-copy">
+              <h3>3. FABRICATION &amp; QC</h3>
+              <p>Print, trim, polish, and inspect every appliance against the digital plan.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -195,80 +251,233 @@
           <button type="button" data-dir="1" aria-label="Next cases">›</button>
         </div>
       </div>
-      <div class="case-grid reveal" id="caseGrid">
-        <article class="case-card">
-          <h3>CASE 1: CROWDING CORRECTION</h3>
-          <div class="ba">
-            <figure>
-              <img src="images/case-before-1.png" alt="Crowding before">
-              <figcaption>BEFORE</figcaption>
-            </figure>
-            <span class="swap">⇄</span>
-            <figure>
-              <img src="images/case-after-1.png" alt="Crowding after">
-              <figcaption>AFTER</figcaption>
-            </figure>
+      <div class="carousel reveal" id="caseCarousel">
+        <div class="case-grid" id="caseGrid">
+          <div class="case-page">
+            <article class="case-card">
+              <h3>CASE 1: CROWDING CORRECTION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-1.png" alt="Crowding before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-1.png" alt="Crowding after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Relieve anterior crowding without extraction.</span></div>
+                <div><b>RESULT</b><span>Aligned arch and balanced contacts in 9 months.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 2: OVERBITE REDUCTION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-2.png" alt="Overbite before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-2.png" alt="Overbite after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Open the bite and improve incisor display.</span></div>
+                <div><b>RESULT</b><span>Stable occlusion with a refined smile arc.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 3: DIASTEMA CLOSURE</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-3.png" alt="Diastema before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-3.png" alt="Diastema after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Close the midline space with controlled roots.</span></div>
+                <div><b>RESULT</b><span>Contact restored while keeping papilla intact.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 4: ROTATION CORRECTION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-4.png" alt="Rotation before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-4.png" alt="Rotation after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Derotate canines and level the occlusal plane.</span></div>
+                <div><b>RESULT</b><span>Clean alignment ready for retention.</span></div>
+              </div>
+            </article>
           </div>
-          <div class="case-meta">
-            <div><b>OBJECTIVE</b><span>Relieve anterior crowding without extraction.</span></div>
-            <div><b>RESULT</b><span>Aligned arch and balanced contacts in 9 months.</span></div>
+          <div class="case-page">
+            <article class="case-card">
+              <h3>CASE 5: OPEN BITE CORRECTION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-1.png" alt="Open bite before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-1.png" alt="Open bite after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Establish anterior contact without stretching the smile.</span></div>
+                <div><b>RESULT</b><span>Positive overbite with stable posterior occlusion.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 6: POSTERIOR CROSSBITE</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-2.png" alt="Crossbite before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-2.png" alt="Crossbite after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Expand the upper arch and seat the buccal segments.</span></div>
+                <div><b>RESULT</b><span>Coordinated arches and even posterior contacts.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 7: SPACING CONSOLIDATION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-3.png" alt="Spacing before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-3.png" alt="Spacing after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Gather generalized spacing with controlled torque.</span></div>
+                <div><b>RESULT</b><span>Tight contacts and a fuller, even smile line.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 8: CLASS II CAMOUFLAGE</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-4.png" alt="Class II before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-4.png" alt="Class II after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Reduce overjet while protecting lower incisor position.</span></div>
+                <div><b>RESULT</b><span>Class I canine relationship with a balanced profile.</span></div>
+              </div>
+            </article>
           </div>
-        </article>
-        <article class="case-card">
-          <h3>CASE 2: OVERBITE REDUCTION</h3>
-          <div class="ba">
-            <figure>
-              <img src="images/case-before-2.png" alt="Overbite before">
-              <figcaption>BEFORE</figcaption>
-            </figure>
-            <span class="swap">⇄</span>
-            <figure>
-              <img src="images/case-after-2.png" alt="Overbite after">
-              <figcaption>AFTER</figcaption>
-            </figure>
+          <div class="case-page">
+            <article class="case-card">
+              <h3>CASE 9: DEEP BITE LEVELING</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-2.png" alt="Deep bite before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-2.png" alt="Deep bite after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Intrude incisors and restore posterior support.</span></div>
+                <div><b>RESULT</b><span>Reduced overbite with a healthier gingival display.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 10: MIDLINE CORRECTION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-3.png" alt="Midline before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-3.png" alt="Midline after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Match dental midlines to the facial midline.</span></div>
+                <div><b>RESULT</b><span>Centered smile without compromising canine class.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 11: ARCH EXPANSION</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-1.png" alt="Expansion before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-1.png" alt="Expansion after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Develop narrow arches for space and smile width.</span></div>
+                <div><b>RESULT</b><span>Broader buccal corridors and easier hygiene access.</span></div>
+              </div>
+            </article>
+            <article class="case-card">
+              <h3>CASE 12: RELAPSE RECOVERY</h3>
+              <div class="ba">
+                <figure>
+                  <img src="images/case-before-4.png" alt="Relapse before">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <span class="swap">⇄</span>
+                <figure>
+                  <img src="images/case-after-4.png" alt="Relapse after">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+              <div class="case-meta">
+                <div><b>OBJECTIVE</b><span>Recover minor relapse after retainer break.</span></div>
+                <div><b>RESULT</b><span>Alignment restored with a dual-layer retainer plan.</span></div>
+              </div>
+            </article>
           </div>
-          <div class="case-meta">
-            <div><b>OBJECTIVE</b><span>Open the bite and improve incisor display.</span></div>
-            <div><b>RESULT</b><span>Stable occlusion with a refined smile arc.</span></div>
-          </div>
-        </article>
-        <article class="case-card">
-          <h3>CASE 3: DIASTEMA CLOSURE</h3>
-          <div class="ba">
-            <figure>
-              <img src="images/case-before-3.png" alt="Diastema before">
-              <figcaption>BEFORE</figcaption>
-            </figure>
-            <span class="swap">⇄</span>
-            <figure>
-              <img src="images/case-after-3.png" alt="Diastema after">
-              <figcaption>AFTER</figcaption>
-            </figure>
-          </div>
-          <div class="case-meta">
-            <div><b>OBJECTIVE</b><span>Close the midline space with controlled roots.</span></div>
-            <div><b>RESULT</b><span>Contact restored while keeping papilla intact.</span></div>
-          </div>
-        </article>
-        <article class="case-card">
-          <h3>CASE 4: ROTATION CORRECTION</h3>
-          <div class="ba">
-            <figure>
-              <img src="images/case-before-4.png" alt="Rotation before">
-              <figcaption>BEFORE</figcaption>
-            </figure>
-            <span class="swap">⇄</span>
-            <figure>
-              <img src="images/case-after-4.png" alt="Rotation after">
-              <figcaption>AFTER</figcaption>
-            </figure>
-          </div>
-          <div class="case-meta">
-            <div><b>OBJECTIVE</b><span>Derotate canines and level the occlusal plane.</span></div>
-            <div><b>RESULT</b><span>Clean alignment ready for retention.</span></div>
-          </div>
-        </article>
+        </div>
       </div>
+      <div class="dots" id="caseDots"></div>
     </section>
 
     <section id="praise" class="section wrap">
@@ -282,31 +491,87 @@
           <button type="button" id="nextQuote" aria-label="Next">›</button>
         </div>
       </div>
-      <div class="praise-track reveal" id="quotes">
-        <article class="quote">
-          <div class="marks">“</div>
-          <p>Setups arrive ready to present. Attachments, staging, and finish details are consistently clinical-grade.</p>
-          <div class="who">
-            <img src="images/doc-1.jpg" alt="Dr. Amira K.">
-            <div><b>Dr. Amira K.</b><span>Orthodontist</span></div>
+      <div class="carousel reveal" id="quoteCarousel">
+        <div class="praise-track" id="quotes">
+          <div class="quote-page">
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Setups arrive ready to present. Attachments, staging, and finish details are consistently clinical-grade.</p>
+              <div class="who">
+                <img src="images/doc-1.jpg" alt="Dr. Amira K.">
+                <div><b>Dr. Amira K.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Turnaround is reliable and the QC photos save us chair time. Patients notice the fit of every aligner.</p>
+              <div class="who">
+                <img src="images/doc-2.jpg" alt="Dr. Omar S.">
+                <div><b>Dr. Omar S.</b><span>Clinic Director</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>They treat our brand like their own. Communication is clear and revisions are handled the same day.</p>
+              <div class="who">
+                <img src="images/doc-3.jpg" alt="Dr. Lina M.">
+                <div><b>Dr. Lina M.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
           </div>
-        </article>
-        <article class="quote">
-          <div class="marks">“</div>
-          <p>Turnaround is reliable and the QC photos save us chair time. Patients notice the fit of every aligner.</p>
-          <div class="who">
-            <img src="images/doc-2.jpg" alt="Dr. Omar S.">
-            <div><b>Dr. Omar S.</b><span>Clinic Director</span></div>
+          <div class="quote-page">
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Staging stays conservative and attachments land where they actually work chairside. First-seat rate went up immediately.</p>
+              <div class="who">
+                <img src="images/doc-2.jpg" alt="Dr. Nour H.">
+                <div><b>Dr. Nour H.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>We moved three practices to DigiQex. Fit consistency is the reason we stayed — and the portal keeps my team aligned.</p>
+              <div class="who">
+                <img src="images/doc-3.jpg" alt="Dr. Youssef A.">
+                <div><b>Dr. Youssef A.</b><span>Clinic Director</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Same-day revision when a scan is off. That kind of partnership is rare in a lab and our patients feel the difference.</p>
+              <div class="who">
+                <img src="images/doc-1.jpg" alt="Dr. Sara E.">
+                <div><b>Dr. Sara E.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
           </div>
-        </article>
-        <article class="quote">
-          <div class="marks">“</div>
-          <p>They treat our brand like their own. Communication is clear and revisions are handled the same day.</p>
-          <div class="who">
-            <img src="images/doc-3.jpg" alt="Dr. Lina M.">
-            <div><b>Dr. Lina M.</b><span>Orthodontist</span></div>
+          <div class="quote-page">
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Indirect bonding jigs seat the first time. Bonding appointments dropped by twenty minutes without sacrificing accuracy.</p>
+              <div class="who">
+                <img src="images/doc-3.jpg" alt="Dr. Karim B.">
+                <div><b>Dr. Karim B.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Patients comment on how clear the aligners look. Finish quality is obvious the moment the tray comes out of the bag.</p>
+              <div class="who">
+                <img src="images/doc-1.jpg" alt="Dr. Hala R.">
+                <div><b>Dr. Hala R.</b><span>Clinic Director</span></div>
+              </div>
+            </article>
+            <article class="quote">
+              <div class="marks">“</div>
+              <p>Uploads, tracking, and QC photos live in one place. Fewer emails, cleaner handoffs, and setups I can approve faster.</p>
+              <div class="who">
+                <img src="images/doc-2.jpg" alt="Dr. Tarek F.">
+                <div><b>Dr. Tarek F.</b><span>Orthodontist</span></div>
+              </div>
+            </article>
           </div>
-        </article>
+        </div>
       </div>
       <div class="dots" id="dots"></div>
     </section>
@@ -422,9 +687,9 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="#portfolio">PORTFOLIO</a>
+      <a href="#portfolio"><span class="nav-long">PORTFOLIO</span><span class="nav-short">WORK</span></a>
       <a href="#about">ABOUT</a>
-      <a href="#contact">LET'S TALK</a>
+      <a href="#contact"><span class="nav-long">LET'S TALK</span><span class="nav-short">TALK</span></a>
       <a class="portal-btn" href="#portal" id="openPortal">PORTAL</a>
     </div>
   </nav>

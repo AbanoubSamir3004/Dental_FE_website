@@ -8,7 +8,7 @@
   const icon3 = board?.querySelector('.pstep--3 [data-node="end"]');
   if (!board || !svg || !line || !dot || !icon1 || !iconMid || !icon3) return;
 
-  const mq = window.matchMedia("(max-width: 800px)");
+  const mq = window.matchMedia("(max-width: 980px)");
 
   function center(el) {
     const b = board.getBoundingClientRect();
@@ -366,4 +366,28 @@ function initReveals() {
   if (document.readyState === "complete") finish();
   else window.addEventListener("load", finish);
   setTimeout(finish, 5000);
+})();
+
+(function setupThemeToggle() {
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+
+  const syncLabel = () => {
+    const theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const next = theme === "dark" ? "light" : "dark";
+    btn.setAttribute("aria-label", `Switch to ${next} mode`);
+    btn.setAttribute("title", next === "light" ? "Light mode" : "Dark mode");
+  };
+
+  syncLabel();
+
+  btn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("digiqex-theme", next);
+    } catch (_) {}
+    syncLabel();
+  });
 })();
